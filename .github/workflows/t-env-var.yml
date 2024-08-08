@@ -1,0 +1,16 @@
+name: my-template
+
+on: [push]
+
+jobs:
+    my-job-1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: step-1
+              run: echo "Hello $owner!"
+              env:
+                owner: ${{github.actor}}
+            - name: step-2
+              run: |
+                echo "Goodbye ${{github.actor}}!"
+                echo "see you later!"
