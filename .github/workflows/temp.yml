@@ -9,4 +9,4 @@ jobs:
             - name: step-1
               run: echo "Hello world!"
             - name: step-2
-             run: echo "Goodbye!"
+              run: echo "Goodbye!"
