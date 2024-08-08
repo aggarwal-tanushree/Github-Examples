@@ -7,8 +7,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: step-1
-              run: echo "Hello world! $my-var"
+              run: echo "Hello $owner!"
               env:
-                my-var: test
+                owner: ${{github.actor}}
             - name: step-2
               run: echo "Goodbye!"
