@@ -1,0 +1,26 @@
+name: check-job-dependency
+
+on: 
+    push:
+      branches:
+        main
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+        - name: step-1
+          run: |
+            echo "step "
+            echo "one"
+        - name: job 1 step 2
+          run: 
+            echo "job 1 step 2"
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: job 2 step 1
+        run: 
+            echo "job 2 dependent on 1"
+
